@@ -15,6 +15,7 @@ namespace Enemies
         public override void Approach(IDefender defender)
         {
             int dmg = defender.Attack(this);
+            Speed += 1; //panic
             GetDamage(dmg);
         }
     }

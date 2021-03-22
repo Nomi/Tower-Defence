@@ -18,11 +18,12 @@ namespace Defenders
         {
             if (rng.NextDouble() < e.Speed / 100)
             {
+                Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + "but misses.");
                 return 0;
             }
             else
             {
-                Console.WriteLine(this.GetType() + " attacks " + e.GetType() + " causing " + strength+" damage.");
+                Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + " causing " + strength + " damage.");
                 return strength;
             }
         }
