@@ -13,7 +13,8 @@ namespace Defenders
         }
         public override int Attack(Rat e)
         {
-            if(arrows>0)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>0)
             {
                 arrows --;
                 if (rng.NextDouble() < e.Speed / 100)
@@ -36,7 +37,8 @@ namespace Defenders
 
         public override int Attack(Ogre e)
         {
-            if(arrows>0)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>0)
             {
                 arrows--;
                 Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");
@@ -51,7 +53,8 @@ namespace Defenders
 
         public override int Attack(Giant e)
         {
-            if(arrows>=2)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>=2)
             {
                 arrows -= 2;
                 Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?

@@ -16,9 +16,10 @@ namespace Defenders
         }
         public virtual int Attack(Rat e)
         {
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
             if (rng.NextDouble() < e.Speed / 100)
             {
-                Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + "but misses.");
+                Console.WriteLine(this.GetType() + " "  + this.name + " tries to attack " + e.GetType() + " "  + e.Name + "but misses.");
                 return 0;
             }
             else
@@ -30,12 +31,14 @@ namespace Defenders
 
         public virtual int Attack(Ogre e)
         {
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
             Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + " causing " + strength + " damage.");
             return strength;
         }
 
         public virtual int Attack(Giant e)
         {
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
             Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + " causing " + strength + " damage.");
             return strength;
         }
