@@ -63,8 +63,8 @@ namespace Defenders
             if (arrows>=2)
             {
                 arrows -= 2;
-                Console.WriteLine(  this.name + " attacks " + e.Name + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?
-                return strength;        //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrow?
+                Console.WriteLine(  this.name + " attacks (using 2 arrows) " + e.Name + " causing " + 2*strength + " damage.");    //I was not using 2*strength earlier because I was assuming Giant takes less/half damage from single arrows?
+                return 2*strength;        //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrow?
             }
             else
             {
