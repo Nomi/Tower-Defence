@@ -16,15 +16,17 @@ namespace Defenders
 
         int IDefender.Attack(Rat e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (hasRat)
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " ignores " + e.GetType() + " " + e.Name);
+                Console.WriteLine(this.name + " ignores " + e.Name);
                 return 0;
             }
             else
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " catches " + e.GetType() + " " + e.Name);
+                Console.WriteLine(this.name + " catches " + e.Name);
                 hasRat = true;
                 return 99999999;        //assuming that max health is less than 99999999 then the enemy will die for sure.
             }
@@ -32,22 +34,26 @@ namespace Defenders
 
         int IDefender.Attack(Giant e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
-            Console.WriteLine(this.GetType() + " " + this.name + " ignores " + e.GetType() + " " + e.Name+'.');
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
+            Console.WriteLine(this.name + " ignores " + e.Name+'.');
             return 0;
         }
 
         int IDefender.Attack(Ogre e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (!hasRat)
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " ignores " + e.GetType() + " " + e.Name + '.');
+                Console.WriteLine(this.name + " ignores " + e.Name + '.');
                 return 0;
             }
             else
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " throws the rat it has on " + e.GetType() + " " + e.Name + " causing it to flee.");
+                Console.WriteLine(this.name + " throws the rat it has on " + e.Name + " causing it to flee.");
                 hasRat = false;
                 return 99999999;        //assuming that max health is less than 99999999 then the enemy will die for sure.
             }

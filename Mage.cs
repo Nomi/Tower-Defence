@@ -38,10 +38,12 @@ namespace Defenders
 
         public virtual int Attack(Rat e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name +  " approaches " + this.GetType() + " " + this.name+".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (CanCastSpell())
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                Console.WriteLine(this.name + " casts a spell on " + e.Name + " causing " + spellPower + " damage.");
                 return spellPower;
             }
             else
@@ -52,10 +54,12 @@ namespace Defenders
 
         public virtual int Attack(Giant e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (CanCastSpell())
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                Console.WriteLine( this.name + " casts a spell on " + e.Name + " causing " + spellPower + " damage.");
                 return spellPower;
             }
             else
@@ -66,10 +70,12 @@ namespace Defenders
 
         public virtual int Attack(Ogre e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (CanCastSpell())
             {
-                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                Console.WriteLine(this.name + " casts a spell on " + e.Name + " causing " + spellPower + " damage.");
                 return spellPower;
             }
             else

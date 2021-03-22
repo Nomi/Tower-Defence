@@ -16,30 +16,36 @@ namespace Defenders
         }
         public virtual int Attack(Rat e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
             if (rng.NextDouble() < e.Speed / 100)
             {
-                Console.WriteLine(this.GetType() + " "  + this.name + " tries to attack " + e.GetType() + " "  + e.Name + "but misses.");
+                Console.WriteLine(  this.name + " tries to attack " +   e.Name + "but misses.");
                 return 0;
             }
             else
             {
-                Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + " causing " + strength + " damage.");
+                Console.WriteLine(  this.name + " attacks " +   e.Name + " causing " + strength + " damage.");
                 return strength;
             }
         }
 
         public virtual int Attack(Ogre e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
-            Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + " causing " + strength + " damage.");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
+            Console.WriteLine(  this.name + " attacks " +   e.Name + " causing " + strength + " damage.");
             return strength;
         }
 
         public virtual int Attack(Giant e)
         {
-            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
-            Console.WriteLine(this.GetType() + " "  + this.name + " attacks " + e.GetType() + " "  + e.Name + " causing " + strength + " damage.");
+//#if DEBUG
+//            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+//#endif
+            Console.WriteLine(  this.name + " attacks " +   e.Name + " causing " + strength + " damage.");
             return strength;
         }
     }

@@ -47,8 +47,8 @@ namespace lab4
         {
             foreach (var defender in defenders)
             {
+                enemy.Approach(defender);
                 // TODO: try to defend against enemy
-
                 if (!enemy.Alive)
                     break;
             }
