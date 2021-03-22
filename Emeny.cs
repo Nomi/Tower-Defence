@@ -21,12 +21,15 @@ namespace Enemies
         protected void GetDamage(int damage)
         {
             HP -= damage;
-            if(HP<=0)
+            if (HP <= 0)
             {
                 Console.WriteLine($"{Name} is dead...");
                 Alive = false;
             }
         }
-        public abstract void Approach(IDefender defender);
+        public virtual void Approach(IDefender defender)
+        {
+            Console.WriteLine("Accesing Approach from base/parent class Enemy", Environment.NewLine);
+        }
     }
 }

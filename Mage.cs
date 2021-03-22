@@ -35,5 +35,47 @@ namespace Defenders
         {
             mana += manaRegen;
         }
+
+        public virtual int Attack(Rat e)
+        {
+            Console.WriteLine(e.GetType() + " " + e.Name +  " approaches " + this.GetType() + " " + this.name+".");
+            if (CanCastSpell())
+            {
+                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                return spellPower;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public virtual int Attack(Giant e)
+        {
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (CanCastSpell())
+            {
+                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                return spellPower;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public virtual int Attack(Ogre e)
+        {
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (CanCastSpell())
+            {
+                Console.WriteLine(this.GetType() + " " + this.name + " casts a spell on " + e.GetType() + " " + e.Name + " causing " + spellPower + " damage.");
+                return spellPower;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

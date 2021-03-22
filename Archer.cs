@@ -13,39 +13,56 @@ namespace Defenders
         }
         public override int Attack(Rat e)
         {
-            if(arrows>0)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>0)
             {
-                arrows--;
+                arrows --;
                 if (rng.NextDouble() < e.Speed / 100)
                 {
+                    Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + "but misses.");
                     return 0;
                 }
                 else
                 {
-                    Console.WriteLine(this.GetType() + " attacks " + e.GetType() + " causing " + strength + " damage.");
+                    Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");
                     return strength;
                 }
+            }
+            else
+            {
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have any arrows left.");
             }
             return 0;
         }
 
         public override int Attack(Ogre e)
         {
-            if(arrows>0)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>0)
             {
-                Console.WriteLine(this.GetType() + " attacks " + e.GetType() + " causing " + strength + " damage.");
+                arrows--;
+                Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");
                 return strength;
+            }
+            else
+            {
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have any arrows left.");
             }
             return 0;
         }
 
         public override int Attack(Giant e)
         {
-            if(arrows>=2)
+            Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
+            if (arrows>=2)
             {
                 arrows -= 2;
-                Console.WriteLine(this.GetType() + " attacks " + e.GetType() + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?
+                Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?
                 return strength;        //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrow?
+            }
+            else
+            {
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have enough arrows left.");
             }
             return 0;
         }

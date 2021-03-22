@@ -11,5 +11,18 @@ namespace Enemies
         {
             Armor = armor;
         }
+        public override void Approach(IDefender defender)
+        {
+            int dmg = defender.Attack(this);
+            if(1<dmg-Armor)
+            {
+                dmg= (dmg - Armor);
+            }
+            else
+            {
+                dmg = 1;
+            }
+            GetDamage(dmg);
+        }
     }
 }

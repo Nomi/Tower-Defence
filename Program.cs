@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Defenders;
 using Enemies;
 
+
 namespace lab4
 {
     class Program
@@ -45,9 +46,9 @@ namespace lab4
         static void Attack(Enemy enemy, IEnumerable<IDefender> defenders)
         {
             foreach (var defender in defenders)
-            { 
-
+            {
                 // TODO: try to defend against enemy
+
                 if (!enemy.Alive)
                     break;
             }

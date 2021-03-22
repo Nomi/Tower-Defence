@@ -6,7 +6,6 @@ namespace Defenders
     {
         int Attack(Rat e);
         int Attack(Giant e);
-
         int Attack(Ogre e);
     }
 }
