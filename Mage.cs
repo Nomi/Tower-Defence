@@ -36,7 +36,7 @@ namespace Defenders
             mana += manaRegen;
         }
 
-        public int Attack(Rat e)
+        public virtual int Attack(Rat e)
         {
             Console.WriteLine(e.GetType() + " " + e.Name +  " approaches " + this.GetType() + " " + this.name+".");
             if (CanCastSpell())
@@ -46,12 +46,11 @@ namespace Defenders
             }
             else
             {
-                RechargeMana();
                 return 0;
             }
         }
 
-        public int Attack(Giant e)
+        public virtual int Attack(Giant e)
         {
             Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
             if (CanCastSpell())
@@ -61,12 +60,11 @@ namespace Defenders
             }
             else
             {
-                RechargeMana();
                 return 0;
             }
         }
 
-        public int Attack(Ogre e)
+        public virtual int Attack(Ogre e)
         {
             Console.WriteLine(e.GetType() + " " + e.Name + " approaches " + this.GetType() + " " + this.name + ".");
             if (CanCastSpell())
@@ -76,7 +74,6 @@ namespace Defenders
             }
             else
             {
-                RechargeMana();
                 return 0;
             }
         }
