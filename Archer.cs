@@ -18,18 +18,18 @@ namespace Defenders
                 arrows --;
                 if (rng.NextDouble() < e.Speed / 100)
                 {
-                    Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + "but misses.");
+                    Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + "but misses.");
                     return 0;
                 }
                 else
                 {
-                    Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + " causing " + strength + " damage.");
+                    Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");
                     return strength;
                 }
             }
             else
             {
-                Console.WriteLine(this.GetType() + this.name + " tries attacking " + e.GetType() + e.Name + " but doesn't have any arrows left.");
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have any arrows left.");
             }
             return 0;
         }
@@ -39,12 +39,12 @@ namespace Defenders
             if(arrows>0)
             {
                 arrows--;
-                Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + " causing " + strength + " damage.");
+                Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");
                 return strength;
             }
             else
             {
-                Console.WriteLine(this.GetType() + this.name + " tries attacking " + e.GetType() + e.Name + " but doesn't have any arrows left.");
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have any arrows left.");
             }
             return 0;
         }
@@ -54,12 +54,12 @@ namespace Defenders
             if(arrows>=2)
             {
                 arrows -= 2;
-                Console.WriteLine(this.GetType() + this.name + " attacks " + e.GetType() + e.Name + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?
+                Console.WriteLine(this.GetType() + " "   + this.name + " attacks " + e.GetType() + " "   + e.Name + " causing " + strength + " damage.");    //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrows?
                 return strength;        //I'm not using 2*strength because I'm assuming Giant takes less/half damage from single arrow?
             }
             else
             {
-                Console.WriteLine(this.GetType() + this.name + " tries attacking " + e.GetType() + e.Name + " but doesn't have enough arrows left.");
+                Console.WriteLine(this.GetType() + " "   + this.name + " tries attacking " + e.GetType() + " "   + e.Name + " but doesn't have enough arrows left.");
             }
             return 0;
         }

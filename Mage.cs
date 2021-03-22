@@ -35,5 +35,7 @@ namespace Defenders
         {
             mana += manaRegen;
         }
+
+        
     }
 }
