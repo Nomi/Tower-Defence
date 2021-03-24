@@ -18,7 +18,6 @@ namespace Defenders
 //#endif
             if (arrows>0)
             {
-                arrows --;
                 if (rng.NextDouble() < e.Speed / 100)
                 {
                     Console.WriteLine(  this.name + " attacks " + e.Name + "but misses.");
@@ -26,6 +25,7 @@ namespace Defenders
                 }
                 else
                 {
+                    arrows--;
                     Console.WriteLine(  this.name + " attacks " + e.Name + " causing " + strength + " damage.");
                     return strength;
                 }
